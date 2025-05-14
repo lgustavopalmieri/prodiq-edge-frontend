@@ -9,7 +9,7 @@ const MachineState: React.FunctionComponent<IMachineStateProps> = (props) => {
   const machineName = "Machine 01 stamping mode";
   const machineStatus = "running";
   const notification = {
-    alert: "stable",
+    alert: "info",
     message: undefined,
   };
   return (

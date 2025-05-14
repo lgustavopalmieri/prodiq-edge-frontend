@@ -1,6 +1,5 @@
 import {
   type LucideIcon,
-  CheckCircle,
   AlertTriangle,
   Info,
   XCircle,
