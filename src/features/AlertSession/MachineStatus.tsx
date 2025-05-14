@@ -27,7 +27,7 @@ const MachineStatus: React.FunctionComponent<MachineStatusProps> = ({
 
   return (
     <div
-      className={`h-[6vh] flex items-center px-4 gap-3 w-50 shadow-inner rounded-md transition-all duration-300 ${getColor()}`}
+      className={`flex items-center px-4 gap-3 w-full shadow-inner rounded-md transition-all duration-300 ${getColor()}`}
     >
       <span className="text-base font-medium">{formatLabel(status)}</span>
     </div>

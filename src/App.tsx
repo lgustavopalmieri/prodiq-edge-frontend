@@ -1,11 +1,8 @@
 import Header from "./features/Header/Header";
 import LayoutTemplate from "./components/Layout/LayoutTemplate";
-import OeeSession from "./features/OeeSession/OeeSession";
-import OperatingSession from "./features/OperatingSession/OperatingSession";
-import AlertSession from "./features/AlertSession/AlertSession";
-import MachineStatus from "./features/AlertSession/MachineStatus";
 import { useAuthStore } from "./features/Authentication/authStore";
 import { useEffect } from "react";
+import MachineState from "./features/MachineState/MachineState";
 
 function App() {
   const setUser = useAuthStore((state) => state.setUser);
@@ -22,8 +19,8 @@ function App() {
   return (
     <LayoutTemplate
       header={<Header />}
-      children={<div className="h-full">a</div>}
-      machineState={<div className="h-full">STAMP</div>}
+      children={<div>children</div>}
+      machineState={<MachineState />}
     />
   );
 }
