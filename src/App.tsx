@@ -1,0 +1,24 @@
+import Header from "./features/Header/Header";
+import LayoutTemplate from "./features/LayoutTemplate";
+import OeeSession from "./features/OeeSession/OeeSession";
+import OperatingSession from "./features/OperatingSession/OperatingSession";
+import AlertSession from "./features/AlertSession/AlertSession";
+import MachineStatus from "./features/AlertSession/MachineStatus";
+
+function App() {
+  // In real life this would come from backend or context
+  const currentAlert = {
+    status: "critical", // or "warning" | "critical"
+    message: "Overheating on Machine 02", // like: "Overheating on Machine 02"
+  };
+
+  return (
+    <LayoutTemplate
+      header={<div className="h-full">a</div>}
+      children={<div className="h-full">a</div>}
+      machineState={<div className="h-full">STAMP</div>}
+    />
+  );
+}
+
+export default App;
