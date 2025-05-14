@@ -1,5 +1,5 @@
 import Header from "./features/Header/Header";
-import LayoutTemplate from "./features/LayoutTemplate";
+import LayoutTemplate from "./components/Layout/LayoutTemplate";
 import OeeSession from "./features/OeeSession/OeeSession";
 import OperatingSession from "./features/OperatingSession/OperatingSession";
 import AlertSession from "./features/AlertSession/AlertSession";
@@ -14,7 +14,7 @@ function App() {
 
   return (
     <LayoutTemplate
-      header={<div className="h-full">a</div>}
+      header={<Header />}
       children={<div className="h-full">a</div>}
       machineState={<div className="h-full">STAMP</div>}
     />
