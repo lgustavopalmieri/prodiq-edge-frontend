@@ -1,14 +1,28 @@
 import { User2 } from "lucide-react";
 import * as React from "react";
+import MenuItem from "../MenuItem/MenuItem";
 
-interface IUserMenuProps {}
+interface IUserMenuProps {
+  userName: string;
+}
 
-const UserMenu: React.FunctionComponent<IUserMenuProps> = (props) => {
+const UserMenu: React.FunctionComponent<IUserMenuProps> = ({
+  userName,
+}) => {
   return (
-    <div className="cursor-pointer flex items-center gap-2 hover:text-white transition">
-      <User2 className="w-5 h-5 text-cyan-400" />
-      <span className="italic font-normal text-cyan-400">João da Silva</span>
-    </div>
+    <MenuItem
+      textColor="amber"
+      placeSide="right"
+      italic
+      icon={User2}
+      name={userName}
+      options={[
+        {
+          label: "Logout",
+          action: () => console.log("Logout"),
+        },
+      ]}
+    />
   );
 };
 
