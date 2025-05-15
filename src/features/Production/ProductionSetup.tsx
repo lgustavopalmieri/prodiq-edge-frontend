@@ -35,6 +35,7 @@ const ProductionSetup: React.FunctionComponent<IProductionSetupProps> = ({
     resolver: zodResolver(schema),
     mode: "onChange",
   });
+  
   const disabledFields = false;
   const onSubmit = (data: ConfigFormData) => {
     onSend(data);
@@ -83,9 +84,9 @@ const ProductionSetup: React.FunctionComponent<IProductionSetupProps> = ({
         <button
           type="button"
           onClick={onCancel}
-          className="cursor-pointer bg-sky-800 hover:bg-sky-900 py-2 px-4 rounded w-full"
+          className="cursor-pointer bg-zinc-800 hover:bg-zinc-900 py-2 px-4 rounded w-full"
         >
-          <span className="text-2xl font-semibold text-sky-300">
+          <span className="text-2xl font-semibold text-zinc-300">
             CLEAN SETUP
           </span>
         </button>
@@ -93,9 +94,9 @@ const ProductionSetup: React.FunctionComponent<IProductionSetupProps> = ({
         <button
           type="submit"
           disabled={!isValid}
-          className="cursor-pointer bg-emerald-800 hover:bg-emerald-900 py-2 px-4 rounded w-full"
+          className="cursor-pointer bg-sky-800 hover:bg-sky-900 py-2 px-4 rounded w-full"
         >
-          <span className="text-2xl font-semibold text-emerald-300">
+          <span className="text-2xl font-semibold text-sky-300">
             CONFIRM SETUP
           </span>
         </button>

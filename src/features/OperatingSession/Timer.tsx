@@ -21,9 +21,9 @@ function formatTime(seconds: number): string {
 
 const Timer: React.FunctionComponent<ITimerProps> = ({ elapsedTime }) => {
   return (
-    <div className="flex items-center justify-center gap-2 text-cyan-300 font-mono font-semibold text-lg">
-      <TimerIcon className="w-5 h-5" />
-      <span>Operation Time: {formatTime(elapsedTime)}</span>
+    <div className="flex items-center justify-center gap-2 text-zinc-300 font-semibold text-2xl">
+      <TimerIcon className="w-8 h-8" />
+      <span>ESTIMATED {formatTime(elapsedTime)}</span>
     </div>
   );
 };

@@ -16,7 +16,7 @@ const NotificationAlert: React.FunctionComponent<INotificationProps> = ({
   notification = "stable",
   message = defaultMessage,
   onMessageClick,
-  maxMessageLength = 30,
+  maxMessageLength = 60,
 }) => {
   const { color, icon: Icon } = getNotificationColor(notification);
   const formatLabel = (s: string) => s.toUpperCase();
@@ -36,13 +36,15 @@ const NotificationAlert: React.FunctionComponent<INotificationProps> = ({
       </div>
 
       {message && (
-        <button
-          className="cursor-pointer flex items-center gap-2 text-base hover:text-white transition"
-          onClick={onMessageClick}
-        >
-          <span>{truncatedMessage}</span>
-          {message !== defaultMessage && <CircleDashed className="w-4 h-4" />}
-        </button>
+        <div className="w-full flex justify-center">
+          <button
+            className="cursor-pointer flex items-center gap-2 text-base hover:text-white transition "
+            onClick={onMessageClick}
+          >
+            <span>{truncatedMessage}</span>
+            {message !== defaultMessage && <CircleDashed className="w-4 h-4" />}
+          </button>
+        </div>
       )}
     </div>
   );
