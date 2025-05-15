@@ -17,12 +17,7 @@ const Production: React.FunctionComponent<IProductionProps> = (props) => {
     <div className="w-full pt-4 pb-4">
       <div className="h-full rounded bg-zinc-800 w-full p-4 gap-4 flex flex-col">
         <CurrentProduction />
-        <div>
-          <ProductionSetup
-            onSend={(value) => console.log(value)}
-            onCancel={() => console.log()}
-          />
-        </div>
+
         <div className="rounded flex pt-4 pb-4 h-1/3 gap-8 w-full justify-between">
           <Timer elapsedTime={4310} />
           <NotificationAlert
@@ -31,6 +26,12 @@ const Production: React.FunctionComponent<IProductionProps> = (props) => {
             onMessageClick={() => {
               console.log("Message clicked");
             }}
+          />
+        </div>
+        <div>
+          <ProductionSetup
+            onSend={(value) => console.log(value)}
+            onCancel={() => console.log()}
           />
         </div>
         <div className="flex h-full h-1/2 justify-between align=center">
