@@ -1,6 +1,6 @@
 import * as React from "react";
 import CurrentProduction from "./CurrentProduction";
-import ProductionSetup from "./ProductionSetup";
+import ProductionSetup from "./ProductionSetup/ProductionSetup";
 import Timer from "../OperatingSession/Timer";
 import NotificationAlert from "../../components/Notification/NotificationAlert";
 import type { NotificationColorType } from "../../styles/colors";
