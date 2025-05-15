@@ -1,26 +1,31 @@
 import * as React from "react";
+import type { UseFormRegisterReturn } from "react-hook-form";
 
 interface IInputProps {
   type: React.HTMLInputTypeAttribute;
-  placeholder: string;
+  label: string;
   disabledField: boolean;
-  registration: ReturnType<any>;
+  registration: UseFormRegisterReturn;
 }
 
 const Input: React.FunctionComponent<IInputProps> = ({
   type,
-  placeholder,
+  label,
   disabledField,
   registration,
 }: IInputProps) => {
   return (
-    <input
-      type={type}
-      placeholder={placeholder}
-      {...registration}
-      disabled={disabledField}
-      className="w-full p-2 rounded bg-gray-700 text-white focus:outline-none focus:ring focus:ring-cyan-500 disabled:opacity-50"
-    />
+    <div className="flex flex-col">
+      <label className="text-sm text-zinc-200 mb-1">
+        {label.toUpperCase()}
+      </label>
+      <input
+        {...registration}
+        disabled={disabledField}
+        type={type}
+        className="p-2 rounded bg-zinc-600 text-zinc-200 focus:outline-none focus:ring focus:ring-zinc-500 disabled:opacity-50"
+      />
+    </div>
   );
 };
 

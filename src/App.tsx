@@ -3,8 +3,6 @@ import LayoutTemplate from "./components/Layout/LayoutTemplate";
 import { useAuthStore } from "./features/Authentication/authStore";
 import { useEffect } from "react";
 import MachineState from "./features/MachineState/MachineState";
-import OeeSession from "./features/OeeSession/OeeSession";
-import OperatingSession from "./features/OperatingSession/OperatingSession";
 import Metrics from "./features/Metrics/Metrics";
 import Production from "./features/Production/Production";
 
@@ -24,16 +22,6 @@ function App() {
           <Metrics />
           <Production />
         </div>
-        //   style={{
-        //     display: "flex",
-        //     justifyContent: "space-between",
-        //     height: "100%",
-        //     gap: "2rem",
-        //   }}
-        // >
-        //   <OeeSession />
-        //   <OperatingSession />
-        // </div>
       }
     />
   );

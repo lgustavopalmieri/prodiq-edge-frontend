@@ -44,7 +44,7 @@ const Metrics: React.FunctionComponent<IMetricsProps> = (props) => {
   };
 
   return (
-    <div className="w-1/3 p-4 flex flex-col gap-4">
+    <div className="w-1/3 pt-4 pb-4 flex flex-col gap-4">
       <MetricsCard
         icon={Orbit}
         label={"OEE"}

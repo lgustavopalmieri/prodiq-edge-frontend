@@ -35,6 +35,10 @@ const textColorMap = {
     base: "text-amber-400",
     hover: "hover:text-amber-900",
   },
+  stone: {
+    base: "text-stone-400",
+    hover: "hover:text-stone-900",
+  },
 } as const;
 
 const MenuItem: React.FunctionComponent<IMenuItemProps> = ({

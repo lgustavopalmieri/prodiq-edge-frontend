@@ -6,12 +6,10 @@ interface IUserMenuProps {
   userName: string;
 }
 
-const UserMenu: React.FunctionComponent<IUserMenuProps> = ({
-  userName,
-}) => {
+const UserMenu: React.FunctionComponent<IUserMenuProps> = ({ userName }) => {
   return (
     <MenuItem
-      textColor="amber"
+      textColor="stone"
       placeSide="right"
       italic
       icon={User2}
