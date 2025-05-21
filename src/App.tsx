@@ -13,6 +13,31 @@ function App() {
     setUser({ name: "John Doe", email: "john@example.com" });
   }, [setUser]);
 
+  useEffect(() => {
+    const socket = new WebSocket("ws://localhost:8080/ws");
+
+    socket.onopen = () => {
+      console.log("✅ WebSocket connected!");
+    };
+
+    socket.onmessage = (event) => {
+      const message = JSON.parse(event.data);
+      console.log(message);
+    };
+
+    socket.onerror = (error) => {
+      console.error("❌ WebSocket error:", error);
+    };
+
+    socket.onclose = () => {
+      console.log("🔌 WebSocket disconnected.");
+    };
+
+    return () => {
+      socket.close();
+    };
+  }, []);
+
   return (
     <LayoutTemplate
       header={<Header />}

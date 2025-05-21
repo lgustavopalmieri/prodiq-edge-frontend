@@ -1,17 +1,12 @@
 import * as React from "react";
 import MachineStatus from "./MachineStatus";
-import NotificationAlert from "../../components/Notification/NotificationAlert";
-import type { NotificationColorType } from "../../styles/colors";
 
 interface IMachineStateProps {}
 
 const MachineState: React.FunctionComponent<IMachineStateProps> = (props) => {
   const machineName = "Machine 01 stamping mode";
   const machineStatus = "running";
-  // const notification = {
-  //   alert: "info",
-  //   message: undefined,
-  // };
+
   return (
     <div className="flex h-full w-full justify-between gap-4">
       <div className="flex items-center w-full gap-8">
@@ -20,13 +15,6 @@ const MachineState: React.FunctionComponent<IMachineStateProps> = (props) => {
         </span>
         <MachineStatus status={machineStatus} />
       </div>
-      {/* <NotificationAlert
-        notification={notification.alert as NotificationColorType}
-        message={undefined}
-        onMessageClick={() => {
-          console.log("Message clicked");
-        }}
-      /> */}
     </div>
   );
 };

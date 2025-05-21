@@ -14,3 +14,9 @@ export const useAuthStore = create<AuthState>((set) => ({
   setUser: (user) => set({ user }),
   logout: () => set({ user: null }),
 }));
+
+	// TenantID string `json:"tenant_id"`
+	// MachineID   string `json:"machine_id"`
+	// MachineCode string `json:"machine_code"`
+	// OperatorID   string `json:"operator_id"`
+	// OperatorName string `json:"operator_name"`
