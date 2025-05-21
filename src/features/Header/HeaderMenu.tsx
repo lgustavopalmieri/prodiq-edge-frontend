@@ -24,7 +24,7 @@ const HeaderMenu: React.FunctionComponent = () => {
         name="Orders"
         options={[{ label: "Details", action: () => console.log("Details") }]}
       />
-      {user?.name && <UserMenu userName={user.name} />}
+      {user?.operatorName && <UserMenu userName={user.operatorName} />}
     </nav>
   );
 };

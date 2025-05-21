@@ -5,15 +5,13 @@ import { useEffect } from "react";
 import MachineState from "./features/MachineState/MachineState";
 import Metrics from "./features/Metrics/Metrics";
 import Production from "./features/Production/Production";
+import Login from "./features/Authentication/Login";
 
 function App() {
-  const setUser = useAuthStore((state) => state.setUser);
+  const user = useAuthStore((state) => state.user?.operatorName);
 
   useEffect(() => {
-    setUser({ name: "John Doe", email: "john@example.com" });
-  }, [setUser]);
-
-  useEffect(() => {
+    if (!user) return;
     const socket = new WebSocket("ws://localhost:8080/ws");
 
     socket.onopen = () => {
@@ -36,7 +34,11 @@ function App() {
     return () => {
       socket.close();
     };
-  }, []);
+  }, [user]);
+
+  if (!user) {
+    return <Login />;
+  }
 
   return (
     <LayoutTemplate
