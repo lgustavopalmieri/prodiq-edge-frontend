@@ -4,8 +4,6 @@ interface AuthState {
   token: string | null;
   user: {
     tenantId: string;
-    machineId: string;
-    machineCode: string;
     operatorId: string;
     operatorName: string;
   } | null;
@@ -19,9 +17,3 @@ export const useAuthStore = create<AuthState>((set) => ({
   setAuth: (token, user) => set({ token, user }),
   logout: () => set({ token: null, user: null }),
 }));
-
-// TenantID string `json:"tenant_id"`
-// MachineID   string `json:"machine_id"`
-// MachineCode string `json:"machine_code"`
-// OperatorID   string `json:"operator_id"`
-// OperatorName string `json:"operator_name"`

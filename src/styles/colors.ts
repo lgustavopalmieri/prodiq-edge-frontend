@@ -5,18 +5,19 @@ import {
   XCircle,
   ShieldCheck,
 } from "lucide-react";
+import type { MachineStatusType } from "../features/MachineState/machineStore";
 
-export type StatusColorType = "running" | "paused" | "stopped" | "idle";
+export type StatusColorType = MachineStatusType;
 
 export const getStatusColor = (status: StatusColorType) => {
   switch (status) {
-    case "running":
+    case "RUNNING":
       return "text-3xl font-bold bg-emerald-600 text-emerald-100";
-    case "paused":
+    case "PAUSED":
       return "text-3xl font-bold bg-amber-600 text-amber-100";
-    case "stopped":
+    case "STOPPED":
       return "text-3xl font-bold bg-rose-600 text-rose-100";
-    case "idle":
+    case "IDLE":
     default:
       return "text-3xl font-bold bg-slate-600 text-slate-100";
   }

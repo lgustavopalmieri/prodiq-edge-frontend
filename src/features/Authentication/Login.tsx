@@ -5,6 +5,7 @@ import { useAuthStore } from "./authStore";
 import Input from "../../components/Input";
 import SetupButton from "../Production/ProductionSetup/SetupButton";
 import ProdIQLogo from "../../components/ProdIQLogo";
+import { useMachineStore } from "../MachineState/machineStore";
 
 const schema = z.object({
   username: z.string().min(1, "Username is required"),
@@ -15,7 +16,7 @@ type LoginFormData = z.infer<typeof schema>;
 
 export default function Login() {
   const setAuth = useAuthStore((state) => state.setAuth);
-
+  const setMachine = useMachineStore((state) => state.setMachine);
   const {
     register,
     handleSubmit,
@@ -37,10 +38,13 @@ export default function Login() {
 
     setAuth(response.token, {
       tenantId: response.tenant_id,
-      machineId: response.machine_id,
-      machineCode: response.machine_code,
       operatorId: response.operator_id,
       operatorName: response.operator_name,
+    });
+    setMachine({
+      tenantId: response.tenant_id,
+      machineId: response.machine_id,
+      machineCode: response.machine_code,
     });
   };
 
