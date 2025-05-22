@@ -26,7 +26,7 @@ const ProductionSetup: React.FunctionComponent<IProductionSetupProps> = ({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-zinc-700 p-4 rounded-md shadow">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 rounded-md">
         <Input
           type={"text"}
           label={"operation"}

@@ -5,27 +5,27 @@ export const colorClassMap: Record<
   { base: string; hover: string; text: string }
 > = {
   zinc: {
-    base: "bg-zinc-800",
+    base: "bg-zinc-700",
     hover: "hover:bg-zinc-900",
     text: "text-zinc-300",
   },
   sky: {
-    base: "bg-sky-800",
+    base: "bg-sky-700",
     hover: "hover:bg-sky-900",
     text: "text-sky-300",
   },
   rose: {
-    base: "bg-rose-800",
+    base: "bg-rose-700",
     hover: "hover:bg-rose-900",
     text: "text-rose-300",
   },
   emerald: {
-    base: "bg-emerald-800",
+    base: "bg-emerald-700",
     hover: "hover:bg-emerald-900",
     text: "text-emerald-300",
   },
   amber: {
-    base: "bg-amber-800",
+    base: "bg-amber-700",
     hover: "hover:bg-amber-900",
     text: "text-amber-300",
   },

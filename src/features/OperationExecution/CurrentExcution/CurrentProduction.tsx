@@ -12,7 +12,7 @@ const CurrentProduction: React.FunctionComponent<
   );
   const currentOrderProduced = "-";
   return (
-    <div className="p-4 rounded border border-zinc-400 bg-zinc-800">
+    <div className="h-full p-4 rounded border border-zinc-400 bg-zinc-800">
       <div className="flex justify-between">
         <ProductionInfo
           label="CURRENT OPERATION"

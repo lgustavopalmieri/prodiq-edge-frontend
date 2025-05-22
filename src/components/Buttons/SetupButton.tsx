@@ -1,8 +1,6 @@
 import * as React from "react";
-import {
-  colorClassMap,
-  type ISetupButtonProps,
-} from "../../features/OperationExecution/ProductionSetup/constants";
+import { colorClassMap } from "../../features/OperationExecution/ProductionSetup/constants";
+import type { ISetupButtonProps } from "../../features/OperationExecution/ProductionSetup/interfaces";
 
 const SetupButton: React.FunctionComponent<ISetupButtonProps> = ({
   type,

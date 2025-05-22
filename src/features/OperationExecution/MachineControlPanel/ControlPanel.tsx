@@ -6,7 +6,7 @@ interface IControlPanelProps {}
 
 const ControlPanel: React.FunctionComponent<IControlPanelProps> = () => {
   return (
-    <div className="w-full pt-4 pb-4">
+    <div className="w-full">
       <div className="flex justify-between gap-8 h-full">
         <ControlButton
           label="START"
@@ -16,14 +16,14 @@ const ControlPanel: React.FunctionComponent<IControlPanelProps> = () => {
           disabled={true}
           pulse={false}
         />
-        <ControlButton
+        {/* <ControlButton
           label="PAUSE"
           icon={Pause}
           color="amber"
           onClick={() => undefined}
           disabled={true}
           pulse={false}
-        />
+        /> */}
         <ControlButton
           label="STOP"
           icon={Square}
