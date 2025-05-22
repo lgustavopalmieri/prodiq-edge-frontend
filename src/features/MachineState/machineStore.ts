@@ -2,6 +2,12 @@ import { create } from "zustand";
 
 export type MachineStatusType = "RUNNING" | "PAUSED" | "IDLE" | "STOPPED";
 
+export interface MachineStatus {
+  machine_id: string;
+  status: MachineStatusType;
+  timestamp: string;
+}
+
 interface MachineState {
   machine: {
     tenantId: string;

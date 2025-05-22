@@ -1,40 +1,35 @@
 import Header from "./features/Header/Header";
 import LayoutTemplate from "./components/Layout/LayoutTemplate";
 import { useAuthStore } from "./features/Authentication/authStore";
-import { useEffect } from "react";
 import MachineState from "./features/MachineState/MachineState";
 import Metrics from "./features/Metrics/Metrics";
 import Production from "./features/Production/Production";
 import Login from "./features/Authentication/Login";
+import { useWebSocket } from "./hooks/useWebSocket";
+import { useMachineStore } from "./features/MachineState/machineStore";
+import { useOperationExecutionTrackingStore } from "./features/Production/ProductionSetup/operationExecutionTrackingStore";
 
 function App() {
   const user = useAuthStore((state) => state.user?.operatorName);
+  const setMachineStatus = useMachineStore((state) => state.setMachineStatus);
+  const setCurrentOperation = useOperationExecutionTrackingStore(
+    (state) => state.setCurrent
+  );
 
-  useEffect(() => {
-    if (!user) return;
-    const socket = new WebSocket("ws://localhost:8080/ws");
-
-    socket.onopen = () => {
-      console.log("✅ WebSocket connected!");
-    };
-
-    socket.onmessage = (event) => {
-      const message = JSON.parse(event.data);
-      console.log(message);
-    };
-
-    socket.onerror = (error) => {
-      console.error("❌ WebSocket error:", error);
-    };
-
-    socket.onclose = () => {
-      console.log("🔌 WebSocket disconnected.");
-    };
-
-    return () => {
-      socket.close();
-    };
-  }, [user]);
+  useWebSocket((data) => {
+    switch (data.channel) {
+      case "status":
+        console.log("🟢 STATUS:", data.message.payload.status);
+        setMachineStatus(data.message.payload.status);
+        break;
+      case "operation":
+        console.log("🔧 OPERATION:", data.message.payload);
+        setCurrentOperation(data.message.payload);
+        break;
+      default:
+        console.warn("❓ Unknown channel");
+    }
+  });
 
   if (!user) {
     return <Login />;
