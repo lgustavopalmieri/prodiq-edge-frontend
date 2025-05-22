@@ -7,7 +7,7 @@ import {
   type ConfigFormData,
   type IProductionSetupProps,
 } from "./constants";
-import SetupButton from "./SetupButton";
+import SetupButton from "../../../components/Buttons/SetupButton";
 
 const ProductionSetup: React.FunctionComponent<IProductionSetupProps> = ({
   onSend,

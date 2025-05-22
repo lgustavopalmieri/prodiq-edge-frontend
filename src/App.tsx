@@ -3,11 +3,11 @@ import LayoutTemplate from "./components/Layout/LayoutTemplate";
 import { useAuthStore } from "./features/Authentication/authStore";
 import MachineState from "./features/MachineState/MachineState";
 import Metrics from "./features/Metrics/Metrics";
-import Production from "./features/Production/Production";
+import Production from "./features/OperationExecution/OperationExecution";
 import Login from "./features/Authentication/Login";
 import { useWebSocket } from "./hooks/useWebSocket";
 import { useMachineStore } from "./features/MachineState/machineStore";
-import { useOperationExecutionTrackingStore } from "./features/Production/ProductionSetup/operationExecutionTrackingStore";
+import { useOperationExecutionTrackingStore } from "./features/OperationExecution/ProductionSetup/operationExecutionTrackingStore";
 
 function App() {
   const user = useAuthStore((state) => state.user?.operatorName);

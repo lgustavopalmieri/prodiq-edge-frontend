@@ -1,5 +1,5 @@
 import type { MachineStatus } from "../features/MachineState/machineStore";
-import type { OperationExecutionTracking } from "../features/Production/ProductionSetup/operationExecutionTrackingStore";
+import type { OperationExecutionTracking } from "../features/OperationExecution/ProductionSetup/operationExecutionTrackingStore";
 
 export type WebSocketEnvelope =
   | {

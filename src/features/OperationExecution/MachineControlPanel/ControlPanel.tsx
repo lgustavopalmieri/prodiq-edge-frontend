@@ -1,5 +1,5 @@
 import * as React from "react";
-import ControlButton from "./ControlButton/ControlButton";
+import ControlButton from "../../../components/Buttons/ControlButton/ControlButton";
 import { Pause, Play, Square } from "lucide-react";
 
 interface IControlPanelProps {}

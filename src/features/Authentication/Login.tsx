@@ -3,7 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useAuthStore } from "./authStore";
 import Input from "../../components/Input";
-import SetupButton from "../Production/ProductionSetup/SetupButton";
+import SetupButton from "../../components/Buttons/SetupButton";
 import ProdIQLogo from "../../components/ProdIQLogo";
 import { useMachineStore } from "../MachineState/machineStore";
 

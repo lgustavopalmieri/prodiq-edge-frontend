@@ -1,6 +1,6 @@
 import * as React from "react";
 import ProductionInfo from "./ProductionInfo";
-import { useOperationExecutionTrackingStore } from "./ProductionSetup/operationExecutionTrackingStore";
+import { useOperationExecutionTrackingStore } from "../ProductionSetup/operationExecutionTrackingStore";
 
 interface ICurrentProductionProps {}
 

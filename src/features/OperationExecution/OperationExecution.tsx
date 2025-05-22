@@ -1,14 +1,14 @@
 import * as React from "react";
-import CurrentProduction from "./CurrentProduction";
+import CurrentProduction from "./CurrentExcution/CurrentProduction";
 import ProductionSetup from "./ProductionSetup/ProductionSetup";
-import Timer from "../OperatingSession/Timer";
+import Timer from "../../components/Timer";
 import NotificationAlert from "../../components/Notification/NotificationAlert";
 import type { NotificationColorType } from "../../styles/colors";
-import ControlPanel from "./ControlPanel";
+import ControlPanel from "./MachineControlPanel/ControlPanel";
 
 interface IProductionProps {}
 
-const Production: React.FunctionComponent<IProductionProps> = (props) => {
+const Production: React.FunctionComponent<IProductionProps> = () => {
   const notification = {
     alert: "stable",
     message: undefined,

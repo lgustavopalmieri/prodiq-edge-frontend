@@ -17,16 +17,12 @@ export function useWebSocket(onMessage?: (payload: WebSocketEnvelope) => void) {
     };
 
     socket.onmessage = (event) => {
-      console.log("📨 Raw WS message:", event.data);
       try {
         const data: WebSocketEnvelope = JSON.parse(event.data);
-        console.log("✅ Parsed WS message:", data);
-
         if (!data.channel || !data.message) {
           console.warn("⚠️ Message missing required fields:", data);
           return;
         }
-
         onMessage?.(data);
       } catch (err) {
         console.error("❌ Failed to parse message or call onMessage:", err);
