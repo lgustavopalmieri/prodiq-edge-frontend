@@ -4,7 +4,7 @@ import { Pause, Play, Square } from "lucide-react";
 
 interface IControlPanelProps {}
 
-const ControlPanel: React.FunctionComponent<IControlPanelProps> = (props) => {
+const ControlPanel: React.FunctionComponent<IControlPanelProps> = () => {
   return (
     <div className="w-full pt-4 pb-4">
       <div className="flex justify-between gap-8 h-full">

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { getStatusColor, type StatusColorType } from "../../styles/colors";
+import { getStatusColor, type StatusColorType } from "./constants";
 
 interface MachineStatusProps {
   status: StatusColorType;

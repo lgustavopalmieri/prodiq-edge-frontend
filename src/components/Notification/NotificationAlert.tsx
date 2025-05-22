@@ -1,9 +1,6 @@
 import * as React from "react";
-import {
-  getNotificationColor,
-  type NotificationColorType,
-} from "../../styles/colors";
 import { CircleDashed } from "lucide-react";
+import { getNotificationColor, type NotificationColorType } from "./constants";
 
 interface INotificationProps {
   notification?: NotificationColorType;

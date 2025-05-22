@@ -4,7 +4,7 @@ import { useMachineStore } from "./machineStore";
 
 interface IMachineStateProps {}
 
-const MachineState: React.FunctionComponent<IMachineStateProps> = (props) => {
+const MachineState: React.FunctionComponent<IMachineStateProps> = () => {
   const machine = useMachineStore((state) => state.machine?.machineCode);
   const machineStatus = useMachineStore((state) => state.machineStatus);
   return (

@@ -1,25 +1,11 @@
 import { BarChart, Clock, Orbit, ShieldCheck } from "lucide-react";
 import * as React from "react";
 import MetricsCard from "./MetricsCard";
+import { getMetricCardColor } from "./constants";
 
 interface IMetricsProps {}
 
-function getMetricCardColor(currentState: string) {
-  switch (currentState) {
-    case "excellent":
-      return "emerald";
-    case "good":
-      return "sky";
-    case "poor":
-      return "amber";
-    case "bad":
-      return "rose";
-    default:
-      return "zinc";
-  }
-}
-
-const Metrics: React.FunctionComponent<IMetricsProps> = (props) => {
+const Metrics: React.FunctionComponent<IMetricsProps> = () => {
   const metric = {
     oee: {
       value: 77.2,

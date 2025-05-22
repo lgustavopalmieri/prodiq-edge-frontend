@@ -1,31 +1,4 @@
-import { z } from "zod";
-
-export interface IProductionSetupProps {
-  onSend: (data: ConfigFormData) => void;
-  onCancel: () => void;
-}
-
-export const schema = z.object({
-  operation: z.string().min(1, "Operation  is required"),
-  quantityPerCycle: z.number().positive("Quantity per cycle must be positive"),
-  standardCycleTime: z
-    .number()
-    .positive("Standard cycle time must be positive"),
-
-  order: z.string().min(1, "Order  is required"),
-  product: z.string().min(1, "Product  is required"),
-  orderQuantity: z.number().positive("Order quantity must be positive"),
-});
-
-export type ConfigFormData = z.infer<typeof schema>;
-
-export interface ISetupButtonProps {
-  type: "submit" | "button";
-  onClick?: () => void;
-  disabled?: boolean;
-  label: string;
-  color?: "zinc" | "sky" | "rose" | "emerald" | "amber";
-}
+import type { ISetupButtonProps } from "./interfaces";
 
 export const colorClassMap: Record<
   NonNullable<ISetupButtonProps["color"]>,
