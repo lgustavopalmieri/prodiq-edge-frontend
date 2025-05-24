@@ -1,0 +1,28 @@
+{
+  "execution_id": "EXEC-78999",
+  "order_id": "ORD-99999",
+  "step_number": 1,
+  "machine_id": "MACHINE-03",
+  "type": "cycle",
+  "source": "mqtt",
+  "in_event": {
+    "timestamp": "2025-05-22T14:03:00Z",
+    "topic": "prodiq/tenant01/machine03/in",
+    "sensor_id": "SENSOR-IN-01"
+  },
+  "out_event": {
+    "timestamp": "2025-05-22T14:03:45Z",
+    "topic": "prodiq/tenant01/machine03/out",
+    "sensor_id": "SENSOR-OUT-01"
+  },
+  "in_time": "2025-05-22T14:03:00Z",
+  "out_time": "2025-05-22T14:03:45Z",
+  "calculated_cycle_time_sec": 45,
+  "quantity_produced": 1,
+  "defective": false,
+  "assembled_at": "2025-05-22T14:03:46Z",
+  "assembled_from": [
+    "prodiq/tenant01/machine03/in",
+    "prodiq/tenant01/machine03/out"
+  ]
+}

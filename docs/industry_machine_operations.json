@@ -1,0 +1,136 @@
+{
+  "industries": [
+    {
+      "name": "Woodworking",
+      "units": ["mm", "m", "m²", "pieces"],
+      "machines": [
+        {
+          "type": "CNC Router",
+          "operations": ["Cutting", "Milling", "Drilling"]
+        },
+        {
+          "type": "Panel Saw",
+          "operations": ["Cutting"]
+        },
+        {
+          "type": "Edgebander",
+          "operations": ["Edge Banding"]
+        }
+      ]
+    },
+    {
+      "name": "Textile",
+      "units": ["m", "kg", "pieces"],
+      "machines": [
+        {
+          "type": "Loom",
+          "operations": ["Weaving"]
+        },
+        {
+          "type": "Cutting Machine",
+          "operations": ["Cutting"]
+        },
+        {
+          "type": "Sewing Machine",
+          "operations": ["Sewing"]
+        }
+      ]
+    },
+    {
+      "name": "Steelworks",
+      "units": ["mm", "kg", "tons", "pieces"],
+      "machines": [
+        {
+          "type": "Laser Cutter",
+          "operations": ["Cutting"]
+        },
+        {
+          "type": "Press Brake",
+          "operations": ["Bending"]
+        },
+        {
+          "type": "Welding Robot",
+          "operations": ["Welding"]
+        }
+      ]
+    },
+    {
+      "name": "Plastics",
+      "units": ["kg", "pieces", "liters"],
+      "machines": [
+        {
+          "type": "Injection Molding Machine",
+          "operations": ["Molding"]
+        },
+        {
+          "type": "Extrusion Line",
+          "operations": ["Extrusion"]
+        }
+      ]
+    },
+    {
+      "name": "Food & Beverage",
+      "units": ["liters", "kg", "grams", "pieces"],
+      "machines": [
+        {
+          "type": "Filling Machine",
+          "operations": ["Filling"]
+        },
+        {
+          "type": "Mixer",
+          "operations": ["Mixing"]
+        },
+        {
+          "type": "Sealing Machine",
+          "operations": ["Sealing"]
+        }
+      ]
+    },
+    {
+      "name": "Pharmaceutical",
+      "units": ["mg", "g", "ml", "pieces"],
+      "machines": [
+        {
+          "type": "Tablet Press",
+          "operations": ["Compression"]
+        },
+        {
+          "type": "Capsule Filler",
+          "operations": ["Filling"]
+        }
+      ]
+    },
+    {
+      "name": "Construction Materials",
+      "units": ["kg", "tons", "m²", "pieces"],
+      "machines": [
+        {
+          "type": "Concrete Block Machine",
+          "operations": ["Molding"]
+        },
+        {
+          "type": "Kiln",
+          "operations": ["Firing"]
+        }
+      ]
+    },
+    {
+      "name": "Printing & Packaging",
+      "units": ["sheets", "m²", "pieces"],
+      "machines": [
+        {
+          "type": "Offset Printer",
+          "operations": ["Printing"]
+        },
+        {
+          "type": "Labeler",
+          "operations": ["Labeling"]
+        },
+        {
+          "type": "Folding Machine",
+          "operations": ["Folding", "Gluing"]
+        }
+      ]
+    }
+  ]
+}

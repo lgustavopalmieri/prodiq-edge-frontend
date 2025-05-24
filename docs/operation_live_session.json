@@ -1,0 +1,100 @@
+{
+  "execution_id": "EXEC-45678",
+  "status": "in_progress",
+  "order_id": "ORD-12345",
+  "step_number": 2,
+  "machine_id": "MACHINE-FOUND-01",
+  "operator_id": "OP-0007",
+  "start_time": "2025-05-22T10:00:00Z",
+  "expected_cycle_time_sec": 90,
+  "quantity_per_cycle": 2,
+  "live": {
+    "last_event_time": "2025-05-22T10:44:12Z",
+    "good_count": 22,
+    "defect_count": 1,
+    "events": [
+      { "timestamp": "2025-05-22T10:00:00Z", "type": "start" },
+      { "timestamp": "2025-05-22T10:12:00Z", "type": "good_part" },
+      { "timestamp": "2025-05-22T10:13:45Z", "type": "good_part" },
+      { "timestamp": "2025-05-22T10:15:12Z", "type": "defect" },
+      {
+        "timestamp": "2025-05-22T10:17:00Z",
+        "type": "pause",
+        "reason": "material load"
+      },
+      { "timestamp": "2025-05-22T10:19:00Z", "type": "resume" },
+      {
+        "timestamp": "2025-05-22T14:03:00Z",
+        "type": "in",
+        "source": "mqtt",
+        "machine_id": "MACHINE-03",
+        "topic": "prodiq/tenant01/machine03/in",
+        "payload": {
+          "sensor_id": "SENSOR-IN-01"
+        }
+      },
+      {
+        "timestamp": "2025-05-22T14:03:45Z",
+        "type": "out",
+        "source": "mqtt",
+        "machine_id": "MACHINE-03",
+        "topic": "prodiq/tenant01/machine03/out",
+        "payload": {
+          "sensor_id": "SENSOR-OUT-01"
+        }
+      }
+    ],
+    "oee": {
+      "availability": 0.92,
+      "performance": 0.85,
+      "quality": 0.96
+    }
+  }
+}
+
+
+//Operation Live Session (lightweight)
+{
+  "execution_id": "EXEC-45678",
+  "status": "in_progress",
+  "order_id": "ORD-12345",
+  "step_number": 2,
+  "machine_id": "MACHINE-03",
+  "operator_id": "OP-0007",
+  "start_time": "2025-05-22T10:00:00Z",
+  "expected_cycle_time_sec": 90,
+  "quantity_per_cycle": 2,
+  "good_count": 22,
+  "defect_count": 1,
+  "last_event_time": "2025-05-22T14:03:45Z",
+  "oee": {
+    "availability": 0.92,
+    "performance": 0.85,
+    "quality": 0.96
+  }
+}
+
+//Event Log (stored separately in DB or file)
+[
+  {
+    "execution_id": "EXEC-45678",
+    "timestamp": "2025-05-22T14:03:00Z",
+    "type": "in",
+    "source": "mqtt",
+    "topic": "prodiq/tenant01/machine03/in",
+    "payload": {
+      "sensor_id": "SENSOR-IN-01"
+    }
+  },
+  {
+    "execution_id": "EXEC-45678",
+    "timestamp": "2025-05-22T14:03:45Z",
+    "type": "out",
+    "source": "mqtt",
+    "topic": "prodiq/tenant01/machine03/out",
+    "payload": {
+      "sensor_id": "SENSOR-OUT-01"
+    }
+  }
+  // ... 10k more
+]

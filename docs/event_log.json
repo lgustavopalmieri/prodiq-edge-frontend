@@ -1,0 +1,28 @@
+{
+  "execution_id": "EXEC-45678",
+  "segment_id": "B",
+  "timestamp": "2025-05-22T11:27:44Z",
+  "type": "cycle",
+  "source": "mqtt",
+  "in_time": "2025-05-22T11:27:00Z",
+  "out_time": "2025-05-22T11:27:44Z",
+  "calculated_cycle_time_sec": 44,
+  "quantity_produced": 2,
+  "defective": false,
+  "active_parameters": {
+    "expected_cycle_time_sec": 110,
+    "quantity_per_cycle": 2
+  }
+}
+
+// 
+
+{
+  "timestamp": "2025-05-22T12:33:00Z",
+  "type": "parameter_change",
+  "parameter": "quantity_per_cycle",
+  "old_value": 2,
+  "new_value": 1,
+  "segment_id": "C",
+  "source": "ui"
+}

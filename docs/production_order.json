@@ -1,0 +1,115 @@
+{
+  "order_id": "a7f8a1b0-1234-4c9a-84e9-bfae2a5f42c1",
+  "order_code": "ORD-12345",
+  "product": {
+    "product_id": "prod-001",
+    "sku": "JWL-GOLD-RING-001",
+    "name": "Gold Ring with Stone",
+    "description": "High-end gold ring with embedded stone",
+    "unit": "pieces"
+  },
+  "quantity": 50,
+  "due_date": "2025-05-31T23:59:59Z",
+  "status": "planned", // planned | in_progress | completed | aborted
+  "routing": [
+    {
+      "step_number": 1,
+      "operation_id": "op-001",
+      "operation_code": "WAX_INJECTION",
+      "operation_name": "Wax Mold Injection",
+      "machine_id": "machine-007",
+      "machine_code": "INJ-PR-01",
+      "machine_type": "Injection Press",
+      "required_setup": {
+        "materials": [
+          {
+            "material_code": "WAX-BLK",
+            "name": "Black Wax",
+            "quantity": 1.0,
+            "unit": "kg"
+          }
+        ],
+        "tools": [
+          {
+            "tool_code": "MOLD-01",
+            "description": "Mold for Ring A"
+          }
+        ]
+      },
+      "expected_cycle_time_sec": 30,
+      "quantity_per_cycle": 1
+    },
+    {
+      "step_number": 2,
+      "operation_id": "op-002",
+      "operation_code": "METAL_CASTING",
+      "operation_name": "Gold Casting",
+      "machine_id": "machine-022",
+      "machine_code": "FND-FR-03",
+      "machine_type": "Foundry Furnace",
+      "required_setup": {
+        "materials": [
+          {
+            "material_code": "PLASTER-GS",
+            "name": "Plaster for Casting",
+            "quantity": 2.5,
+            "unit": "kg"
+          },
+          {
+            "material_code": "GOLD-18K",
+            "name": "18k Gold",
+            "quantity": 0.5,
+            "unit": "kg"
+          }
+        ],
+        "tools": []
+      },
+      "expected_cycle_time_sec": 90,
+      "quantity_per_cycle": 2
+    },
+    {
+      "step_number": 3,
+      "operation_id": "op-003",
+      "operation_code": "ASSEMBLY_SOLDER",
+      "operation_name": "Soldering & Assembly",
+      "machine_id": "machine-031",
+      "machine_code": "BNCH-ST-05",
+      "machine_type": "Bench Station",
+      "required_setup": {
+        "materials": [],
+        "tools": [
+          {
+            "tool_code": "SOLDER-KIT",
+            "description": "Gold Solder Kit",
+            "setup_parameters": [
+              {
+                "name": "Tip Temperature",
+                "code": "TIP_TEMP",
+                "unit": "°C",
+                "target_value": 350,
+                "tolerance": {
+                  "min": 340,
+                  "max": 360
+                },
+                "required": true
+              },
+              {
+                "name": "Wire Type",
+                "code": "WIRE_TYPE",
+                "unit": null,
+                "options": ["AuSn", "SnAg", "PbFree"],
+                "required": true
+              }
+            ]
+          }
+        ]
+      },
+      "expected_cycle_time_sec": 60,
+      "quantity_per_cycle": 1
+    }
+  ],
+  "instructions": "Ensure all molds are pre-heated before step 1. Use safety goggles in step 2.",
+  "priority": "high",
+  "created_by": "eng_jessica",
+  "created_at": "2025-05-20T14:30:00Z"
+}

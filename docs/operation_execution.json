@@ -1,0 +1,135 @@
+{
+  "execution_id": "EXEC-45678",
+  "order_id": "ORD-12345",
+  "step_number": 2,
+  "operation_code": "METAL_CASTING",
+  "machine_id": "MACHINE-FOUND-01",
+  "operator_id": "OP-0007",
+  "mode": "automatic", // or "manual" if offline
+  "status": "completed", // in_progress | completed | aborted | error
+  "start_time": "2025-05-22T10:00:00Z",
+  "end_time": "2025-05-22T11:12:00Z",
+  "downtime_minutes": 7,
+  "expected_cycle_time_sec": 90,
+  "quantity_per_cycle": 2,
+  "quantity_produced": {
+    "good": 48,
+    "defective": 2
+  },
+  "materials_consumed": [
+    { "material_code": "PLASTER-GS", "quantity": 2.4, "unit": "kg" },
+    { "material_code": "GOLD-18K", "quantity": 0.51, "unit": "kg" }
+  ],
+  "tools_used": [
+    { "tool_code": "CAST-MOLD-02" }
+  ],
+  "notes": "Minor delay during casting due to mold pressure issue.",
+  "events": [
+    { "timestamp": "2025-05-22T10:00:00Z", "type": "start" },
+    { "timestamp": "2025-05-22T10:22:00Z", "type": "pause", "reason": "temperature adjustment" },
+    { "timestamp": "2025-05-22T10:30:00Z", "type": "resume" },
+    { "timestamp": "2025-05-22T11:12:00Z", "type": "stop" },
+      {
+        "timestamp": "2025-05-22T14:03:00Z",
+        "type": "in",
+        "source": "mqtt",
+        "machine_id": "MACHINE-03",
+        "topic": "prodiq/tenant01/machine03/in",
+        "payload": {
+          "sensor_id": "SENSOR-IN-01"
+        }
+      },
+      {
+        "timestamp": "2025-05-22T14:03:45Z",
+        "type": "out",
+        "source": "mqtt",
+        "machine_id": "MACHINE-03",
+        "topic": "prodiq/tenant01/machine03/out",
+        "payload": {
+          "sensor_id": "SENSOR-OUT-01"
+        }
+      }
+  ]
+}
+
+//  with Parameter Changes
+{
+  "execution_id": "EXEC-45678",
+  "order_id": "ORD-12345",
+  "step_number": 2,
+  "machine_id": "MACHINE-FOUND-01",
+  "operator_id": "OP-0007",
+  "status": "completed",
+  "start_time": "2025-05-22T10:00:00Z",
+  "end_time": "2025-05-22T14:00:00Z",
+  "current_parameters": {
+    "expected_cycle_time_sec": 110,
+    "quantity_per_cycle": 1
+  },
+  "segmented_parameter_changes": [
+    {
+      "segment_parameter_changes_id":"A",
+      "timestamp": "2025-05-22T11:04:00Z",
+      "parameter": "expected_cycle_time_sec",
+      "old_value": 90,
+      "new_value": 110,
+      "source": "ui",
+      "operator_id": "OP-0007",
+      "reason": "Material caused delay"
+    },
+    {
+      "segment_parameter_changes_id":"B",
+      "timestamp": "2025-05-22T12:33:00Z",
+      "parameter": "quantity_per_cycle",
+      "old_value": 2,
+      "new_value": 1,
+      "source": "ui",
+      "operator_id": "OP-0007",
+      "reason": "Machine failed in dual mode"
+    }
+  ],
+  "segmented_oee": [
+    {
+      "segment_oee_id": "A",
+      "start": "2025-05-22T10:00:00Z",
+      "end": "2025-05-22T11:04:00Z",
+      "expected_cycle_time_sec": 90,
+      "quantity_per_cycle": 2,
+      "good_count": 20,
+      "defect_count": 1,
+      "availability": 0.94,
+      "performance": 0.88,
+      "quality": 0.952
+    },
+    {
+      "segment_oee_id": "B",
+      "start": "2025-05-22T11:04:00Z",
+      "end": "2025-05-22T12:33:00Z",
+      "expected_cycle_time_sec": 110,
+      "quantity_per_cycle": 2,
+      "good_count": 15,
+      "defect_count": 2,
+      "availability": 0.91,
+      "performance": 0.82,
+      "quality": 0.882
+    },
+    {
+      "segment_oee_id": "C",
+      "start": "2025-05-22T12:33:00Z",
+      "end": "2025-05-22T14:00:00Z",
+      "expected_cycle_time_sec": 110,
+      "quantity_per_cycle": 1,
+      "good_count": 10,
+      "defect_count": 1,
+      "availability": 0.89,
+      "performance": 0.75,
+      "quality": 0.909
+    }
+  ],
+  "final_oee": {
+    "availability": 0.913,
+    "performance": 0.824,
+    "quality": 0.917,
+    "overall_oee": 0.693 // 0.913 × 0.824 × 0.917
+  }
+}
